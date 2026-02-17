@@ -1,2 +1,57 @@
 @import "tailwindcss";
 @import "uniwind";
+
+@theme {
+  /* Font Families */
+  --font-bebas: "BebasNeue", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "BebasNeue", ui-sans-serif, system-ui, sans-serif;
+  --font-family-sans: "BebasNeue", ui-sans-serif, system-ui, sans-serif;
+
+  /* Primary */
+  --color-primary-500: #7e3ef2;
+  --color-primary-400: #9d6df4;
+  --color-primary-300: #bc9cf6;
+  --color-primary-200: #dbcbf8;
+
+  /* Card colors */
+  --color-card-pink: #fcd9ff;
+  --color-card-mint: #beffe7;
+  --color-card-lime: #f1ff98;
+  --color-card-cream: #f8ffcf;
+
+  /* Blacks (1) */
+  --color-black-1-900: #060214;
+  --color-black-1-800: #16141e;
+  --color-black-1-700: #1c2120;
+  --color-black-1-600: #171717;
+
+  /* Blacks (2) */
+  --color-black-2-900: #222027;
+  --color-black-2-800: #16141e;
+  --color-black-2-700: #34323b;
+  --color-black-2-500: #888888;
+
+  /* Optional (pink) */
+  --color-optional-pink-500: #ff48d7;
+  --color-optional-pink-300: #fcc2f9;
+  --color-optional-pink-200: #ffe4fe;
+  --color-optional-pink-100: #ffeefe;
+
+  /* Optional (lime) */
+  --color-optional-lime-500: #b9d600;
+  --color-optional-lime-400: #d8e870;
+  --color-optional-lime-300: #e9f1b0;
+  --color-optional-lime-200: #eef1d8;
+
+  /* Optional (teal) */
+  --color-optional-teal-500: #31d096;
+  --color-optional-teal-400: #8ee4c4;
+  --color-optional-teal-300: #b7f5de;
+  --color-optional-teal-200: #cffbea;
+
+  /* Support */
+  --color-support-danger-600: #e21414;
+  --color-support-danger-500: #e50000;
+  --color-support-warning-500: #d37015;
+  --color-support-success-500: #23d706;
+}
