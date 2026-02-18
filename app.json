@@ -1,12 +1,25 @@
 {
+  "name": "brofit",
   "expo": {
+    "plugins": [
+      "expo-font",
+       {
+        "fonts": [
+          "assets/fonts/BebasNeue-Regular.ttf"
+        ]
+       }
+    ],
+    "name": "brofit",
+    "slug": "brofit",
+    "version": "1.0.0",
     "scheme": "acme",
     "userInterfaceStyle": "automatic",
     "orientation": "default",
     "web": {
       "output": "static"
     },
-    "name": "brofit",
-    "slug": "brofit"
+    "plugins": [
+      "expo-font"
+    ]
   }
 }

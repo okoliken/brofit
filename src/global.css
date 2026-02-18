@@ -3,10 +3,7 @@
 
 @theme {
   /* Font Families */
-  --font-bebas: "BebasNeue", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "BebasNeue", ui-sans-serif, system-ui, sans-serif;
-  --font-family-sans: "BebasNeue", ui-sans-serif, system-ui, sans-serif;
-
+  --font-bebas: "BebasNeue";
   /* Primary */
   --color-primary-500: #7e3ef2;
   --color-primary-400: #9d6df4;

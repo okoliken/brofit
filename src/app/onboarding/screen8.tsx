@@ -1,6 +1,5 @@
 import { StatusBar } from "expo-status-bar";
 import { Text, View } from "react-native";
-import { router } from "expo-router";
 
 export default function OnboardingScreen8() {
   return (
