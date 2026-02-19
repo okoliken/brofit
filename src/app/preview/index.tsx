@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { ScrollView, Text, View } from "react-native";
+import Button from "../../components/Button";
 
 const colorSwatches = [
   // Primary
@@ -56,6 +57,45 @@ export default function PreviewScreen() {
         <Text className="text-lg text-white/70 mb-6 font-sans">
           Theme colors showcase
         </Text>
+
+        {/* Buttons */}
+        <Text className="text-xl font-bebas text-white mb-3 mt-4">
+          Buttons
+        </Text>
+        <View className="gap-3 mb-6">
+          <Button variant="primary" size="large">
+            Primary
+          </Button>
+          <Button variant="primary" size="small">
+            Primary small
+          </Button>
+          <Button variant="secondary" size="large">
+            Secondary
+          </Button>
+          <Button variant="outline" size="large">
+            Outline
+          </Button>
+          <Button variant="ghost" size="large">
+            Ghost
+          </Button>
+          <Button variant="danger" size="large">
+            Danger
+          </Button>
+          <View className="flex-row flex-wrap gap-3 mt-2">
+            <Button variant="card-pink" size="small">
+              Card pink
+            </Button>
+            <Button variant="card-mint" size="small">
+              Card mint
+            </Button>
+            <Button variant="card-lime" size="small">
+              Card lime
+            </Button>
+            <Button variant="card-cream" size="small">
+              Card cream
+            </Button>
+          </View>
+        </View>
 
         {/* Grid */}
         <View className="flex-row flex-wrap justify-between">
