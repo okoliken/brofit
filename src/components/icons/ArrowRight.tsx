@@ -6,7 +6,7 @@ export interface ArrowRightProps {
 }
 
 export default function ArrowRight({
-  size = 24,
+  size = 32,
   color = "white",
 }: ArrowRightProps) {
   return (
