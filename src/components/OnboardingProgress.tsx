@@ -2,8 +2,6 @@ import { View } from "react-native";
 import Button from "./Button";
 import ArrowRight from "./icons/ArrowRight";
 
-const TOTAL_STEPS = 8;
-
 const OnboardingProgressItem = ({
   isActive,
 }: {
@@ -18,17 +16,19 @@ const OnboardingProgressItem = ({
 
 export interface OnboardingProgressProps {
   currentStep?: number;
+  totalSteps?: number;
   onContinue?: () => void;
 }
 
 const OnboardingProgress = ({
   currentStep = 1,
+  totalSteps = 8,
   onContinue,
 }: OnboardingProgressProps) => {
   return (
     <View className="flex-row items-center justify-between w-full">
       <View className="flex-row items-center gap-1">
-        {Array.from({ length: TOTAL_STEPS }, (_, i) => (
+        {Array.from({ length: totalSteps }, (_, i) => (
           <OnboardingProgressItem
             key={i}
             isActive={i === currentStep - 1}
