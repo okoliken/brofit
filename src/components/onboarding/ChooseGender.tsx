@@ -15,7 +15,7 @@ import { useOnboardingStore } from "../../stores/onboardingStore";
 import GenderOptionRow from "./GenderOptionRow";
 import { enterSpring, PATTERN_IMAGE, STAGGER_MS, type OnboardingStepPageProps } from "./constants";
 
-export default function ChooseAgePage({
+export default function ChooseGender({
   pageIndex,
   currentPageIndex,
 }: OnboardingStepPageProps) {

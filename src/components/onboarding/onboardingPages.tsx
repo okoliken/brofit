@@ -1,10 +1,10 @@
 import type { OnboardingStepPageProps } from "./constants";
 import GetStartedPage from "./GetStartedPage";
-import ChooseAgePage from "./ChooseAgePage";
+import ChooseGender from "./ChooseGender";
 
 export const ONBOARDING_PAGES = [
   GetStartedPage,
-  ChooseAgePage,
+  ChooseGender,
 ] as const satisfies readonly ((props: OnboardingStepPageProps) => React.JSX.Element)[];
 
 export const TOTAL_STEPS = ONBOARDING_PAGES.length;
