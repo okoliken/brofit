@@ -11,6 +11,9 @@ import Marquee from "../Marquee";
 import ImageStrip from "./ImageStrip";
 import { enterSpring, STAGGER_MS, type OnboardingStepPageProps } from "./constants";
 
+const MARQUEE_DURATION = 32000;
+const ROW_DELAYS = [280, 280 + STAGGER_MS, 280 + STAGGER_MS * 2];
+
 export default function GetStartedPage({
   pageIndex,
   currentPageIndex,
@@ -21,19 +24,21 @@ export default function GetStartedPage({
   const row2Progress = useSharedValue(0);
   const row3Progress = useSharedValue(0);
 
+  const rowProgressValues = [row1Progress, row2Progress, row3Progress];
+
   useEffect(() => {
     if (isActive) {
       titleProgress.value = withDelay(80, withSpring(1, enterSpring));
-      row1Progress.value = withDelay(280, withSpring(1, enterSpring));
-      row2Progress.value = withDelay(280 + STAGGER_MS, withSpring(1, enterSpring));
-      row3Progress.value = withDelay(280 + STAGGER_MS * 2, withSpring(1, enterSpring));
+      rowProgressValues.forEach((p, i) => {
+        p.value = withDelay(ROW_DELAYS[i], withSpring(1, enterSpring));
+      });
     } else {
       titleProgress.value = withTiming(0, { duration: 0 });
-      row1Progress.value = withTiming(0, { duration: 0 });
-      row2Progress.value = withTiming(0, { duration: 0 });
-      row3Progress.value = withTiming(0, { duration: 0 });
+      rowProgressValues.forEach((p) => {
+        p.value = withTiming(0, { duration: 0 });
+      });
     }
-  }, [isActive, titleProgress, row1Progress, row2Progress, row3Progress]);
+  }, [isActive]);
 
   const titleStyle = useAnimatedStyle(() => ({
     opacity: titleProgress.value,
@@ -53,26 +58,24 @@ export default function GetStartedPage({
     transform: [{ translateY: (1 - row3Progress.value) * 36 }],
   }));
 
+  const rows = [
+    { style: row1Style, reverse: false },
+    { style: row2Style, reverse: true },
+    { style: row3Style, reverse: false },
+  ];
+
   return (
     <View className="flex-1 pt-6">
       <View className="gap-3 -mt-6">
-        <Animated.View style={row1Style}>
-          <Marquee duration={32000} reverse={false}>
-            <ImageStrip />
-          </Marquee>
-        </Animated.View>
-        <Animated.View style={row2Style}>
-          <Marquee duration={32000} reverse={true}>
-            <ImageStrip />
-          </Marquee>
-        </Animated.View>
-        <Animated.View style={row3Style}>
-          <Marquee duration={32000} reverse={false}>
-            <ImageStrip />
-          </Marquee>
-        </Animated.View>
+        {rows.map(({ style, reverse }, i) => (
+          <Animated.View key={i} style={style}>
+            <Marquee duration={MARQUEE_DURATION} reverse={reverse}>
+              <ImageStrip />
+            </Marquee>
+          </Animated.View>
+        ))}
       </View>
-      <Animated.View style={[titleStyle]} className="px-4 mt-8">
+      <Animated.View style={titleStyle} className="px-4 mt-8">
         <Text className="text-7xl font-bebas text-white tracking-[-0.04em] leading-tight">
           start your journey with brofit
         </Text>

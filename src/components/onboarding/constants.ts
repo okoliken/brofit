@@ -11,6 +11,7 @@ export const MARQUEE_IMAGES = [
 ];
 
 export const PATTERN_IMAGE = require("../../../assets/onboarding/patterns/pattern.png");
+export const PATTERN2_IMAGE = require("../../../assets/onboarding/patterns/pattern2.png");
 
 export interface OnboardingStepPageProps {
   pageIndex: number;
